@@ -1,0 +1,57 @@
+/* Hero Slider */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    background:
+        radial-gradient(ellipse at 75% 40%, rgba(94, 114, 228, .35), transparent 45%),
+        linear-gradient(110deg, #111827 15%, #1e1b4b 60%, #312e81 100%);
+    transition: opacity .55s ease;
+}
+.hero-slide.is-active { opacity: 1; }
+.slider-control {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 9999px;
+    color: white;
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+    backdrop-filter: blur(4px);
+    transition: all .2s ease;
+}
+.slider-control:hover { background: rgba(255,255,255,.2); }
+.slider-prev { left: 1rem; }
+.slider-next { right: 1rem; }
+.slider-dot { width: 9px; height: 9px; border-radius: 9999px; background: rgba(255,255,255,.4); transition: all .3s ease; }
+.slider-dot.is-active { width: 26px; background: #5e72e4; }
+.gallery-filter.is-selected { border-color: #5e72e4; background: #5e72e4; color: white; box-shadow: 0 4px 12px rgba(94,114,228,0.3); }
+.add-to-order:disabled { cursor: not-allowed; opacity: .45; }
+
+/* Argon UI custom styles */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.text-xxs {
+    font-size: 0.7rem;
+    line-height: 0.95rem;
+}
